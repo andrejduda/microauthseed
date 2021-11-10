@@ -1,6 +1,26 @@
 micronaut:
   application:
     name: microauthseed
+  server:
+    cors:
+      enabled: true
+      configurations:
+        all:
+            exposedHeaders:
+                - Content-Type
+                - Authorization
+                - origin
+                - accept
+#          allowedOrigins:
+#            - http://somepage.com
+#            - https://somepage.com
+            allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+                - OPTIONS
+                - HEAD
   security:
     authentication: bearer
     token:
